@@ -25,16 +25,6 @@ function ($) {
                             label: 'Hello World Text',
                             // 定义文本框的默认值
                             defaultValue: 'Hello wrold'
-                        },
-                        MyArrayProp: {
-                            // 定义名称以引用代码中的新属性
-                            ref: 'myDynamicOutput',
-                            // 定义了类型定义，在这种情况下我们希望返回一个字符串
-                            type: 'Array',
-                            // 用于在文本框上方显示标签
-                            label: 'Hello World Array',
-                            // 定义文本框的默认值
-                            defaultValue: 'Hello array'
                         }
                     }
                 }
