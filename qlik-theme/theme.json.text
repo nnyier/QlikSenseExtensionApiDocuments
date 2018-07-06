@@ -1,0 +1,958 @@
+// 主题是qliksense 2018年2月版提出，4月版正式实施，其实就是去修改sense默认的.json文件和.css文件
+
+{
+  // 定义自定义主题是否从默认主题（Sense Classic）继承样式属性。JSON文件中定义的属性会覆盖继承的属性。默认ture
+  "_inherit": false,
+  //（可选） 可以在JSON文件中引用的变量。
+  "_variables": {
+    "@default": "#555555",
+    "@dark": "#333333",
+    "@light": "#eeeeee",
+    "@H1": "24px",
+    "@H2": "18px",
+    "@H3": "14px",
+    "@H4": "13px",
+    "@H5": "12px",
+    "@font-normal": "12px"
+  },
+  // （可选） 引用将在应用主题时插入的自定义样式表。
+  "customStyles": [{
+    "cssRef": "theme.css",
+    "classRef": "my-theme"
+  }],
+  // 字体颜色。可以通过在任何支持颜色的级别上定义颜色属性来覆盖此设置
+  "color": "@default",
+  // 	字体大小。可以通过在支持fontSize的任何级别上定义fontSize属性来覆盖此设置
+  "fontSize": "@font-normal",
+  // 	图表的背景颜色。可以通过在图表类型级别定义背景颜色属性来覆盖此设置。
+  "backgroundColor": "@light",
+  // 对象样式。
+  "object": {
+    // 标题属性。可以通过在图表类型级别定义title属性来覆盖此设置。
+    "title": {
+      // 主标题
+      "main": {
+        "color": "@default",
+        "fontSize": "@font-normal"
+      },
+      // 副标题
+      "subTitle": {
+        "color": "@default",
+        "fontSize": "@font-normal"
+      },
+      // 脚标题
+      "footer": {
+        "color": "@default",
+        "fontSize": "@font-normal",
+        "backgroundColor": "@light"
+      }
+    },
+    // 标签属性。可以通过在图表类型级别为具有标签的图表定义label属性来覆盖此设置。
+    // 以下图表类型支持标签属性：
+    // barChart 条形图 (label.name.color; label.value.fontSize)
+    // gauge 仪表盘 (label.name.color;)
+    // histogram 直方图 (label.name.color; label.value.fontSize)
+    // lineChart 线型图 (label.name.color; label.value.fontSize)
+    // pieChart 饼图 (label.name.color; label.name.fontSize;label.value.fontSize)
+    //scatterPlot 散点图 (label.name.color; label.value.fontSize)
+    // waterfallChart 瀑布图 (label.value.fontSize)
+    "label": {
+      // 标签名称属性。
+      "name": {
+        "color": "@default",
+        "fontSize": "10px"
+      },
+      // 标签值属性。
+      "value": {
+        "color": "@default",
+        "fontSize": "10px"
+      }
+    },
+    //	轴属性。通过在图表类型级别上为具有轴的图表（条形图，箱形图，组合图，分布图，仪表，直方图，折线图，散点图和瀑布图）定义轴属性，可以覆盖此设置。
+    // 对于饼图，可以覆盖axis.title并用于为尺寸标签设置样式。
+    "axis": {
+      // 轴标题属性。
+      "title": {
+        "fontSize": "@font-normal",
+        "color": "@default"
+      },
+      // 	轴标签属性。
+      "label": {
+        "name": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        }
+      },
+      // 轴线属性。
+      "line": {
+        "major": {
+          "color": "@default"
+        },
+        "minor": {
+          "color": "@default"
+        }
+      }
+    },
+    // 网格属性。无法在图表类型级别覆盖此设置。
+    "grid": {
+      // 线属性
+      "line": {
+        // 高对比度
+        "highContrast": {
+          "color": "@default"
+        },
+        // 主要
+        "major": {
+          "color": "@default"
+        },
+        // 次要
+        "minor": {
+          "color": "@default"
+        }
+      }
+    },
+    // 	参考线属性。无法在图表类型级别覆盖此设置。
+    "referenceLine": {
+      // 标签属性
+      "label": {
+        "name": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        }
+      },
+      // 超出范围的属性。
+      "outOfBounds": {
+        "color": "@default",
+        "backgroundColor": "@default",
+        "fontSize": "@H6"
+      }
+    },
+    // 图例 通过在图表类型级别为带有图例的图表（条形图，组合图，折线图，饼图，散点图，树图，瀑布图）定义图例属性，可以覆盖此设置。
+    "legend": {
+      // 图例标题
+      "title": {
+        "color": "@default",
+        "fontSize": "@font-normal"
+      },
+      // 图例标签
+      "label": {
+        "color": "@default",
+        "fontSize": "@font-normal"
+      }
+    },
+    // 图表类型 这些是可以存在于对象结构中的常见图表类型属性。为每个图表列出的属性是特定的
+    // 大多数全局对象属性也可以在图表类型级别上定义。如果完成，则覆盖全局对象级别上设置的属性。
+    // 条形图
+    "barChart": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "legend": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        }
+      },
+      "label": {
+        "value": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        }
+      },
+      // 超出范围的属性。
+      "outOfRange": {
+        "color": "@default"
+      }
+    },
+    // 箱型图
+    "boxPlot": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "box": {
+        "whisker": {
+          "stroke": "@default"
+        },
+        "line": {
+          "stroke": "@default"
+        },
+        "box": {
+          "fill": "@default",
+          "stroke": "@default"
+        }
+      }
+    },
+    // 组合图
+    "comboChart": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "legend": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        }
+      }
+    },
+    // 分布图
+    "distributionPlot": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "box": {
+        "fill": "@default"
+      }
+    },
+    // 过滤器？
+    "filterpane": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      }
+    },
+    // 仪表盘
+    "gauge": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "label": {
+        "value": {
+          "color": "@default"
+        }
+      }
+    },
+    // 直方图
+    "histogram": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "label": {
+        "value": {
+          "color": "@default",
+          "fontSize": "40px"
+        }
+      }
+    },
+    // 指标
+    "kpi": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      }
+    },
+    // 线型图
+    "lineChart": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "legend": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        }
+      },
+      "outOfRange": {
+        "color": "@default"
+      },
+      "label": {
+        "value": {
+          "color": "@dark",
+          "fontSize": "@font-normal"
+        }
+      }
+    },
+    // 列表框
+    "listBox": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        }
+      },
+      "content": {
+        "color": "@default",
+        "fontSize": "@font-normal"
+      }
+    },
+    // 地图
+    "mapChart": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      }
+    },
+    // 饼图
+    "pieChart": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        }
+      },
+      "legend": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        }
+      },
+      "label": {
+        "name": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "value": {
+          "fontSize": "@font-normal"
+        }
+      }
+    },
+    //数据透视表
+    "pivotTable": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "header": {
+        "fontSize": "@font-normal",
+        "color": "@default"
+      },
+      "content": {
+        "fontSize": "@font-normal",
+        "color": "@default"
+      }
+    },
+    // 散点图
+    "scatterPlot": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "legend": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        }
+      },
+      "label": {
+        "value": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        }
+      }
+    },
+    // 表？？？
+    "straightTable": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "header": {
+        "fontSize": "@font-normal",
+        "color": "@default"
+      },
+      "content": {
+        "fontSize": "@font-normal",
+        "color": "@default"
+      }
+    },
+    // 文字图片
+    "textImage": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      }
+    },
+    // 树形图
+    "treemap": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "legend": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        }
+      },
+      "branch": {
+        "backgroundColor": "@default",
+        "label": {
+          "color": "@light",
+          "fontSize": "@font-normal"
+        }
+      },
+      "leaf": {
+        "label": {
+          "fontSize": "@font-normal"
+        }
+      }
+    },
+    // 瀑布图
+    "waterfallChart": {
+      "backgroundColor": "@light",
+      "title": {
+        "main": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "subTitle": {
+          "color": "@default",
+          "fontSize": "@font-normal"
+        },
+        "footer": {
+          "color": "@default",
+          "fontSize": "@font-normal",
+          "backgroundColor": "@light"
+        }
+      },
+      "axis": {
+        "title": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        },
+        "label": {
+          "name": {
+            "color": "@default",
+            "fontSize": "@font-normal"
+          }
+        },
+        "line": {
+          "major": {
+            "color": "@default"
+          },
+          "minor": {
+            "color": "@default"
+          }
+        }
+      },
+      "legend": {
+        "label": {
+          "fontSize": "@font-normal",
+          "color": "@default"
+        }
+      },
+      "label": {
+        "value": {
+          "fontSize": "@font-normal"
+        }
+      },
+      "value": {
+        "color": {
+          "default": "@default",
+          "dark": "@dark",
+          "light": "@light"
+        }
+      },
+      // 形状
+      "shape": {
+        "positiveValue": {
+          "fill": "white"
+        },
+        "negativeValue": {
+          "fill": "#ccccc"
+        },
+        "subtotal": {
+          "fill": "#000000"
+        },
+        "bridge": {
+          "stroke": "#333333"
+        }
+      }
+    }
+  },
+  // 数据颜色属性。
+  "dataColors": {
+    // 原色
+    "primaryColor": "blue",
+    // 其他色
+    "othersColor": "grey",
+    // 错误颜色
+    "errorColor": "red",
+    // 空值颜色
+    "nullColor": "yellow"
+  },
+  // 调色板  按维度取色范围
+  "palettes": {
+    // 数据调色板的属性。这些用于属性面板中的尺寸颜色。
+    "data": [{
+        // 可选的。调色板的名称。
+        "name": "First data palette",
+        // 显示UI中调色板名称
+        "translation": "12 colors",
+        // 调色板的标识符。必须在系统中是唯一的。
+        "propertyValue": "data-palette-1",
+        // 调色板的类型。pyramid金字塔 row 行
+        "type": "pyramid",
+        // 调色板中使用的所有颜色的定义。从上到下，从左到右缩放。
+        "scale": [
+          ["#4477aa"],
+          ["#4477aa", "#cc6677"],
+          ["#4477aa", "#ddcc77", "#cc6677"],
+          ["#4477aa", "#117733", "#ddcc77", "#cc6677"],
+          ["#332288", "#88ccee", "#117733", "#ddcc77", "#cc6677"],
+          ["#332288", "#88ccee", "#117733", "#ddcc77", "#cc6677", "#aa4499"],
+          ["#332288", "#44aa99", "#88ccee", "#117733", "#ddcc77", "#cc6677", "#aa4499"],
+          ["#332288", "#44aa99", "#88ccee", "#117733", "#999933", "#ddcc77", "#cc6677", "#aa4499"],
+          ["#332288", "#44aa99", "#88ccee", "#117733", "#999933", "#ddcc77", "#cc6677", "#882255", "#aa4499"],
+          ["#332288", "#44aa99", "#88ccee", "#117733", "#999933", "#ddcc77", "#661100", "#cc6677", "#882255", "#aa4499"],
+          ["#332288", "#6699cc", "#44aa99", "#88ccee", "#117733", "#999933", "#ddcc77", "#661100", "#cc6677", "#882255", "#aa4499"],
+          ["#332288", "#6699cc", "#88ccee", "#44aa99", "#117733", "#999933", "#ddcc77", "#661100", "#cc6677", "#aa4466", "#882255", "#aa4499"]
+        ]
+      },
+      {
+        "name": "Second data palette",
+        "translation": "4 Colors",
+        "propertyValue": "data-palette-2",
+        "type": "row",
+        "scale": [
+          "#ff00ff",
+          "#00ff00",
+          "#0000ff",
+          "#000000"
+        ]
+      }
+    ],
+    // 	UI调色板的属性。您可以定义几个调色板，但是在颜色选择器中使用ui中定义的第一个调色板，例如，当用单色时/维度/度量/按表达式。
+    "ui": [{
+      // 调色板名称
+      "name": "Palette",
+      // UI调色板中使用的颜色。应始终定义唯一的颜色。
+      "colors": [
+        "#cccccc",
+        "#aaaaaa",
+        "#111111",
+        "#999999",
+        "#acacac",
+        "#dddddd",
+        "#eeeeee",
+        "#ffffff",
+        "#000000"
+      ]
+    }]
+  },
+  //  按度量取色范围 这些是常见的配色方案属性。在“属性”面板中，缩放用于“测量颜色”。
+  "scales": [
+    {
+      // 配色方案名称（自定义顺序渐变）
+      "name": "Custom Sequential Gradient",
+      // 显示UI中颜色方案的名称
+      "translation": "Custom Sequential Gradient",
+      // 配色方案的属性值 sg（Sequential Gradient 顺序渐变）sc（Sequential Class顺序类）dg（Diverging gradient 发散渐变）dc（Diverging Classes 发散类）
+      "propertyValue": "sg",
+      // 配色方案的类型。gradient渐变 classes类
+      "type": "gradient",
+      // 	颜色方案中包含的颜色，从左到右缩放。
+      "scale": ["#1A2980", "#26D0CE"]
+    },
+    {
+      "name": "Custom Sequential Classes",
+      "translation": "Custom Sequential Classes",
+      "propertyValue": "sc",
+      "type": "class",
+      "scale": ["#d32b1d", "#023474"]
+    },
+    {
+      "name": "Custom Diverging gradient",
+      "translation": "Custom Diverging gradient",
+      "propertyValue": "dg",
+      "type": "gradient",
+      "scale": ["#1A2980", "#FFFFFF", "#26D0CE", "#d32b1d"]
+    },
+    {
+      "name": "Custom Diverging Classes",
+      "translation": "Custom Diverging Classes",
+      "propertyValue": "dc",
+      "type": "class",
+      "scale": ["#9C824A", "#EF0107", "#DB0007", "#FFFFFF", "#023474"]
+    }
+  ]
+}
+
+// 详情请参阅官方文档：https://help.qlik.com/en-US/sense-developer/February2018/Subsystems/Extensions/Content/CustomThemes/custom-themes-properties.htm?_ga=2.57217962.1673536238.1523350076-225234654.1523350076
